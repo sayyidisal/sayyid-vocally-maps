@@ -1,20 +1,29 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from "react";
+import MapView, {
+  PROVIDER_GOOGLE,
+  Marker,
+  Callout,
+  Circle,
+} from "react-native-maps";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Dimensions,
+  TouchableOpacity,
+  Button,
+  StatusBar,
+  TextInput,
+} from "react-native";
+import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
+import FontAwesome from "@expo/vector-icons/FontAwesome";
+import RootNavigator from "./src/RootNavigator";
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+  return(
+    <>
+    <StatusBar hidden/>
+    <RootNavigator/>
+    </>
+  )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
